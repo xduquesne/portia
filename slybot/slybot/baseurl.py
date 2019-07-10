@@ -7,8 +7,8 @@ from six.moves.urllib.parse import urljoin
 
 from scrapely.htmlpage import parse_html, HtmlTagType
 
-ABSURLRE = re.compile("^https?\:\/\/")
-DOCTYPERE = re.compile("<!DOCTYPE.*?>", re.S | re.I)
+ABSURLRE = re.compile(r"^https?\:\/\/")
+DOCTYPERE = re.compile(r"<!DOCTYPE.*?>", re.S | re.I)
 
 
 def _is_abs_url(url):

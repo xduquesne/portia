@@ -56,7 +56,7 @@ class SlydJsonResource(Resource):
         try:
             return json.load(request.content)
         except ValueError as ex:
-            self.bad_request("Error parsing json. %s" % ex.message)
+            self.bad_request("Error parsing json. %s" % ex.args[0])
 
 
 class SlydJsonObjectResource(SlydJsonResource):

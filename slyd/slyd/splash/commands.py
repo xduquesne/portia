@@ -23,7 +23,7 @@ from portia_orm.datastore import data_store_context
 from portia_orm.models import Project
 
 from .utils import extract_data, _get_viewport, _html_path, decoded_html
-_VIEWPORT_RE = re.compile('^\d{3,5}x\d{3,5}$')
+_VIEWPORT_RE = re.compile(r'^\d{3,5}x\d{3,5}$')
 _SPIDER_LOG = logging.getLogger('spider')
 _SETTINGS = Settings()
 _SETTINGS.set('SPLASH_URL', 'http://splash')

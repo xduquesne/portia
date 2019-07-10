@@ -11,7 +11,7 @@ from storage.projecttemplates import templates
 
 
 # stick to alphanum . and _. Do not allow only .'s (so safe for FS path)
-_INVALID_PROJECT_RE = re.compile('[^A-Za-z0-9._]|^\.*$')
+_INVALID_PROJECT_RE = re.compile(r'[^A-Za-z0-9._]|^\.*$')
 
 
 def allowed_project_name(name):

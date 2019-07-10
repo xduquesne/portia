@@ -24,7 +24,7 @@ class CsvLinkExtractor(BaseLinkExtractor):
                               for key, default in _FORMAT_PARAMETERS)
         if PY2:
             for key, val in self.fmtparams.items():
-                if isinstance(val, unicode):
+                if isinstance(val, string_types):
                     self.fmtparams[key] = val.encode()
         super(CsvLinkExtractor, self).__init__(**kwargs)
         self.allowed_schemes = [x for x in self.allowed_schemes

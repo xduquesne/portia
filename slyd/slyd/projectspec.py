@@ -77,7 +77,7 @@ class ProjectSpec(object):
         if to_name == from_name:
             return
         # TODO: Make optional
-        if not re.match('^[a-zA-Z0-9][a-zA-Z0-9_\.-]*$', to_name):
+        if not re.match(r'^[a-zA-Z0-9][a-zA-Z0-9_\.-]*$', to_name):
             raise BadRequest('Bad Request', 'Invalid spider name')
         if to_name in self.list_spiders():
             raise IOError('Can\'t rename spider as a spider with the name, '

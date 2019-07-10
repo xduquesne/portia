@@ -31,7 +31,7 @@ try:
 except ImportError:
     # https://html.spec.whatwg.org/multipage/syntax.html#character-references
     # http://stackoverflow.com/questions/18689230/why-do-html-entity-names-with-dec-255-not-require-semicolon
-    _ENTITY_RE = re.compile("&#(\d+|x[a-f\d]+);?", re.I)
+    _ENTITY_RE = re.compile(r"&#(\d+|x[a-f\d]+);?", re.I)
 
     def _replace_entity(match):
         entity = match.group(1)

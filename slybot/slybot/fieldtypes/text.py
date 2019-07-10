@@ -4,7 +4,7 @@ Text types
 import re
 from scrapely.extractors import text as extract_text, safehtml
 from w3lib.html import remove_tags
-_REMOVE_TAGID = re.compile(' data-tagid="\d+"').sub
+_REMOVE_TAGID = re.compile(r' data-tagid="\d+"').sub
 
 
 class _BaseTextProcessor(object):

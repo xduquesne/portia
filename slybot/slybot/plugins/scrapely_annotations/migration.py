@@ -215,7 +215,8 @@ def find_element(tagid, sel):
 def css_escape(s):
     """from http://mathiasbynens.be/notes/css-escapes"""
     s = re.sub(r'(^-$|[ !"#\$%&\'()*+,./:;<=>?@\[\\\]^`{|}~])', r'\\\1', s)
-    s = re.sub(r'^(-?)(\d)', lambda m: '%s\%x ' % (m.group(1), ord(m.group(2))), s)
+    s = re.sub(r'^(-?)(\d)', lambda m: '%s\%x ' %
+               (m.group(1), ord(m.group(2))), s)
     s = re.sub(r'([\t\n\v\f\r])', lambda m: '\%x ' % ord(m.group(1)), s)
     return s
 
@@ -254,8 +255,8 @@ def find_css_selector(elem, sel, depth=0, previous_tbody=False):
     def children_index(elem):
         parent = elem.getparent()
         if parent is not None:
-            children = filter(lambda x: x.tag is not Comment,
-                              parent.getchildren())
+            children = list(filter(lambda x: x.tag is not Comment,
+                                   parent.getchildren()))
             index = children.index(elem) + 1
         else:
             index = 0

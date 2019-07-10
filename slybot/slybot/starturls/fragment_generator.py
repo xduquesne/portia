@@ -30,7 +30,7 @@ class FragmentGenerator(object):
         return processor(fragment['value'])
 
     def process_fragments(self, spec):
-        return map(self._process_fragment, spec['fragments'])
+        return list(map(self._process_fragment, spec['fragments']))
 
     def __call__(self, spec):
         generated = product(*self.process_fragments(spec))

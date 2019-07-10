@@ -135,7 +135,7 @@ class ModelMeta(type):
                 for attrname, field in fields.items()
             })
         except ValueError as e:
-            raise ImproperlyConfigured(e.message)
+            raise ImproperlyConfigured(e.args[0])
 
         # build a marshmallow schema for the filesystem format
         file_schema_attrs['Meta'] = type('Meta', (meta,), {
